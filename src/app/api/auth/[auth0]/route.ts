@@ -1,3 +1,3 @@
-// Auth routes (/auth/login, /auth/logout, /auth/callback, /auth/profile)
-// are handled automatically by src/middleware.ts using auth0.middleware()
+// Auth routes (/api/auth/login, /api/auth/logout, /api/auth/callback)
+// are handled by src/middleware.ts via auth0.middleware()
 export {};
