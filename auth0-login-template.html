@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <title>Japan 2026 — Sign In</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet" />
+  {%- auth0:head -%}
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #FCFCFA;
+      --text:         #1a1a1a;
+      --text-muted:   #6b6b6b;
+      --osaka-red:    #C0392B;
+      --shadow:       0 0 0 1px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+      --r-sm: 8px;
+      --r-md: 14px;
+      --r-lg: 20px;
+    }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      background-color: #FCFCFA;
+      background-image:
+        radial-gradient(circle at 20% 20%, rgba(192,57,43,0.06) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(192,57,43,0.04) 0%, transparent 40%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5 C25 5 20 10 20 15 C20 25 30 30 30 30 C30 30 40 25 40 15 C40 10 35 5 30 5Z' fill='none' stroke='%23C0392B' stroke-width='0.3' opacity='0.15'/%3E%3C/svg%3E");
+      background-size: auto, auto, 60px 60px;
+    }
+
+    .page-wrap {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-outer {
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .mon-circle {
+      width: 64px;
+      height: 64px;
+      background: var(--osaka-red);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      box-shadow: 0 4px 16px rgba(192,57,43,0.3);
+    }
+
+    .mon-circle svg {
+      width: 36px;
+      height: 36px;
+      fill: white;
+    }
+
+    .header-title {
+      font-family: 'Noto Serif JP', 'Georgia', serif;
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      margin-bottom: 0.25rem;
+    }
+
+    .header-subtitle {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+
+    .kanji-accent {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.75rem;
+      color: var(--osaka-red);
+      opacity: 0.7;
+      margin-top: 0.25rem;
+      letter-spacing: 0.15em;
+    }
+
+    .widget-card {
+      background: white;
+      border-radius: var(--r-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 1.25rem;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .footer .flag-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .torii-dots {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+    .torii-dots span {
+      width: 4px;
+      height: 4px;
+      background: var(--osaka-red);
+      border-radius: 50%;
+      opacity: 0.4;
+    }
+    .torii-dots span:nth-child(2) { opacity: 0.6; }
+    .torii-dots span:nth-child(3) { opacity: 0.4; }
+
+    .sakura-container {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .petal {
+      position: absolute;
+      top: -20px;
+      width: 10px;
+      height: 10px;
+      background: radial-gradient(circle at 30% 30%, #FFC0CB, #FFB6C1 60%, #FF9EAD);
+      border-radius: 0 50% 50% 50%;
+      transform: rotate(45deg);
+      opacity: 0;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0%   { transform: translateY(0) rotate(0deg);   opacity: 0; }
+      5%   { opacity: 0.7; }
+      90%  { opacity: 0.5; }
+      100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="sakura-container" id="sakura"></div>
+
+<div class="page-wrap">
+  <div class="card-outer">
+
+    <div class="header">
+      <div class="mon-circle">
+        <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="8" width="32" height="3" rx="1.5"/>
+          <rect x="5" y="4" width="26" height="2.5" rx="1.25"/>
+          <rect x="6" y="11" width="3" height="20" rx="1.5"/>
+          <rect x="27" y="11" width="3" height="20" rx="1.5"/>
+        </svg>
+      </div>
+      <h1 class="header-title">Japan 2026</h1>
+      <p class="header-subtitle">Melbourne · Sept 11–23</p>
+      <p class="kanji-accent">日本旅行 · 家族の旅</p>
+    </div>
+
+    <div class="widget-card">
+      {%- auth0:widget -%}
+    </div>
+
+    <div class="footer">
+      <div class="flag-row">
+        <div class="torii-dots"><span></span><span></span><span></span></div>
+        <span>🌸 Anand · Saranya · Aila 🌸</span>
+        <div class="torii-dots"><span></span><span></span><span></span></div>
+      </div>
+      <span>Family trip planner · Private access only</span>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  (function() {
+    var container = document.getElementById('sakura');
+    var count = 12;
+    for (var i = 0; i < count; i++) {
+      var petal = document.createElement('div');
+      petal.className = 'petal';
+      petal.style.left = (Math.random() * 100) + '%';
+      petal.style.width = (8 + Math.random() * 6) + 'px';
+      petal.style.height = petal.style.width;
+      petal.style.animationDuration = (8 + Math.random() * 12) + 's';
+      petal.style.animationDelay = (Math.random() * 15) + 's';
+      container.appendChild(petal);
+    }
+  })();
+</script>
+
+</body>
+</html>

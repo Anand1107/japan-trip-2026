@@ -6,7 +6,6 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    '/((?!_next/static|_next/image|favicon.ico).*)',
-  ],
+  // Only intercept Auth0 auth routes — login, logout, callback, profile
+  matcher: '/api/auth/:path*',
 };
