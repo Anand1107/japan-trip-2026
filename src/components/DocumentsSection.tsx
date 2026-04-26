@@ -15,8 +15,8 @@ export default function DocumentsSection() {
   const [uploading, setUploading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [dragging, setDragging] = useState(false);
+  const [blobReady, setBlobReady] = useState<boolean | null>(null); // null = loading
   const inputRef = useRef<HTMLInputElement>(null);
-  const hasBlobToken = process.env.NEXT_PUBLIC_HAS_BLOB === 'true';
 
   useEffect(() => {
     fetchFiles();
@@ -28,9 +28,12 @@ export default function DocumentsSection() {
       if (res.ok) {
         const data = await res.json();
         setFiles(data.blobs ?? []);
+        setBlobReady(true);
+      } else {
+        setBlobReady(false);
       }
     } catch {
-      // silently fail — blob may not be configured
+      setBlobReady(false);
     }
   }
 
@@ -86,10 +89,10 @@ export default function DocumentsSection() {
         <p className="text-sm text-stone-500">Upload booking confirmations, insurance, passports scans & itineraries</p>
       </div>
 
-      {!hasBlobToken && (
+      {blobReady === false && (
         <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
-          <p className="font-semibold mb-1">⚠️ Blob storage not configured</p>
-          <p>Add <code className="bg-amber-100 px-1 rounded">BLOB_READ_WRITE_TOKEN</code> in your Vercel project settings under Storage → Blob, then redeploy.</p>
+          <p className="font-semibold mb-1">⚠️ Blob storage not reachable</p>
+          <p>Check that <code className="bg-amber-100 px-1 rounded">BLOB_READ_WRITE_TOKEN</code> is set in Vercel project settings and redeploy.</p>
         </div>
       )}
 
