@@ -7,6 +7,7 @@ type Props = {
   storageKey: string;
   defaultValue: string;
   className?: string;
+  style?: React.CSSProperties;
   multiline?: boolean;
   placeholder?: string;
   tag?: string;
@@ -16,6 +17,7 @@ export default function EditableText({
   storageKey,
   defaultValue,
   className = '',
+  style,
   multiline = false,
   placeholder = 'Click to edit...',
   tag = 'span',
@@ -57,7 +59,7 @@ export default function EditableText({
       onKeyDown={handleKeyDown}
       data-placeholder={placeholder}
       className={`editable-field ${className}`}
-      style={{ outline: 'none', minWidth: '2em' }}
+      style={{ outline: 'none', minWidth: '2em', ...style }}
     />
   );
 }

@@ -1,0 +1,2054 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Anand family Japan trip 2026 - Comprehensive travel companion">
+    <meta name="theme-color" content="#C41E3A">
+    <title>Japan 2026 — Family Trip Companion</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ========== CSS RESET & VARIABLES ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-bg-primary: #F5EFE6;
+            --color-bg-alt: #FDFAF6;
+            --color-bg-card: #FFFFFF;
+            --color-text-primary: #1C1C1C;
+            --color-text-muted: #7A7A7A;
+            --color-accent-primary: #C41E3A;
+            --color-accent-secondary: #8B9D6F;
+            --color-accent-indigo: #2A3F6F;
+            --color-accent-pink: #FFB7C5;
+            --color-border: #E8E0D5;
+
+            --color-osaka: #C41E3A;
+            --color-kyoto: #8B9D6F;
+            --color-tokyo: #2A3F6F;
+
+            --font-serif: 'DM Serif Display', serif;
+            --font-sans: 'Noto Sans', sans-serif;
+
+            --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.07);
+            --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.10);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 40px;
+            --spacing-2xl: 48px;
+
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 24px;
+
+            --transition-smooth: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        html {
+            font-family: var(--font-sans);
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-primary);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-alt) 100%);
+            min-height: 100dvh;
+            overflow-x: hidden;
+            padding-bottom: 80px;
+        }
+
+        @supports (padding: max(0px)) {
+            body {
+                padding-bottom: calc(80px + max(0px, env(safe-area-inset-bottom)));
+            }
+        }
+
+        /* ========== TYPOGRAPHY ========== */
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 40px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h2 {
+            font-family: var(--font-serif);
+            font-size: 32px;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+            margin-bottom: var(--spacing-md);
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 0;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-primary);
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.65;
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-primary);
+        }
+
+        .label {
+            font-size: 12px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+            text-transform: uppercase;
+            color: var(--color-text-muted);
+        }
+
+        .meta {
+            font-size: 13px;
+            color: var(--color-text-muted);
+            font-weight: 500;
+        }
+
+        /* ========== LAYOUT ========== */
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-sm);
+            width: 100%;
+        }
+
+        /* ========== SECTION VISIBILITY ========== */
+        .section {
+            display: none;
+            animation: fadeInUp 0.6s var(--transition-smooth) forwards;
+            padding: var(--spacing-xl) var(--spacing-sm);
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== HERO ========== */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--color-bg-alt) 0%, var(--color-bg-primary) 100%);
+            padding: var(--spacing-xl) var(--spacing-sm);
+            text-align: center;
+            overflow: hidden;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"%3E%3Cpath d="M0,50 Q25,40 50,50 T100,50" fill="none" stroke="rgba(0,0,0,0.03)" stroke-width="1"/%3E%3Cpath d="M0,60 Q25,50 50,60 T100,60" fill="none" stroke="rgba(0,0,0,0.03)" stroke-width="1"/%3E%3Cpath d="M0,70 Q25,60 50,70 T100,70" fill="none" stroke="rgba(0,0,0,0.03)" stroke-width="1"/%3E%3C/svg%3E');
+            background-size: 100px 100px;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            margin-bottom: var(--spacing-xs);
+            font-size: 48px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--color-text-muted);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .route-pills {
+            display: flex;
+            gap: var(--spacing-xs);
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .pill {
+            background: var(--color-bg-card);
+            border: 1px solid var(--color-border);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-md);
+            font-size: 12px;
+            font-weight: 500;
+            box-shadow: var(--shadow-card);
+        }
+
+        .pill.osaka {
+            background: var(--color-osaka);
+            color: white;
+            border-color: var(--color-osaka);
+        }
+
+        .pill.kyoto {
+            background: var(--color-kyoto);
+            color: white;
+            border-color: var(--color-kyoto);
+        }
+
+        .pill.tokyo {
+            background: var(--color-tokyo);
+            color: white;
+            border-color: var(--color-tokyo);
+        }
+
+        .arrow {
+            font-size: 14px;
+            color: var(--color-text-muted);
+        }
+
+        .date-strip {
+            background: var(--color-bg-card);
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--radius-md);
+            text-align: center;
+            box-shadow: var(--shadow-card);
+            margin-top: var(--spacing-md);
+        }
+
+        .date-strip .label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .date-strip p {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* ========== ALERTS ========== */
+        .alert-container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .alert {
+            display: flex;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            animation: slideIn 0.6s var(--transition-smooth);
+            align-items: flex-start;
+        }
+
+        .alert-icon {
+            font-size: 20px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .alert-content h4 {
+            font-weight: 600;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        .alert-close {
+            margin-left: auto;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: inherit;
+            opacity: 0.7;
+            flex-shrink: 0;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .alert-close:hover {
+            opacity: 1;
+        }
+
+        .alert.silver-week {
+            background: rgba(196, 30, 58, 0.08);
+            border-left: 4px solid var(--color-accent-primary);
+            color: var(--color-accent-primary);
+        }
+
+        .alert.typhoon {
+            background: rgba(255, 140, 0, 0.08);
+            border-left: 4px solid #FF8C00;
+            color: #CC6600;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* ========== CARDS ========== */
+        .card {
+            background: var(--color-bg-card);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+            border: 1px solid var(--color-border);
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .card.day-card {
+            border-left: 5px solid var(--color-text-primary);
+            padding-left: var(--spacing-md);
+        }
+
+        .card.day-card.osaka {
+            border-left-color: var(--color-osaka);
+        }
+
+        .card.day-card.kyoto {
+            border-left-color: var(--color-kyoto);
+        }
+
+        .card.day-card.tokyo {
+            border-left-color: var(--color-tokyo);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--spacing-sm);
+            gap: var(--spacing-sm);
+        }
+
+        .date-badge {
+            background: var(--color-accent-indigo);
+            color: white;
+            padding: 4px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .city-badge {
+            background: var(--color-accent-secondary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .city-badge.osaka {
+            background: var(--color-osaka);
+        }
+
+        .city-badge.tokyo {
+            background: var(--color-tokyo);
+        }
+
+        .card h3 {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .activity-bullet {
+            margin-bottom: var(--spacing-sm);
+            padding-left: var(--spacing-sm);
+            border-left: 2px solid var(--color-border);
+            padding: 0 0 0 var(--spacing-sm);
+        }
+
+        .activity-time {
+            font-size: 12px;
+            color: var(--color-text-muted);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* ========== HOTEL CARDS ========== */
+        .hotel-card {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .hotel-name {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-accent-indigo);
+        }
+
+        .hotel-dates {
+            font-size: 13px;
+            color: var(--color-text-muted);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hotel-price {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--color-accent-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .hotel-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--color-text-primary);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .amenity-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-top: var(--spacing-sm);
+        }
+
+        .tag {
+            background: var(--color-bg-alt);
+            padding: 4px 10px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--color-text-primary);
+            border: 1px solid var(--color-border);
+        }
+
+        /* ========== TABLES ========== */
+        .table-wrapper {
+            overflow-x: auto;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            background: var(--color-accent-indigo);
+            color: white;
+            padding: var(--spacing-sm);
+            text-align: left;
+            font-weight: 600;
+            font-size: 13px;
+            letter-spacing: 0.3px;
+        }
+
+        td {
+            padding: var(--spacing-sm);
+            border-bottom: 1px solid var(--color-border);
+            color: var(--color-text-primary);
+        }
+
+        tbody tr:nth-child(even) {
+            background: var(--color-bg-alt);
+        }
+
+        tbody tr:hover {
+            background: rgba(196, 30, 58, 0.03);
+        }
+
+        .total-row {
+            background: var(--color-accent-indigo) !important;
+            color: white;
+            font-weight: 600;
+        }
+
+        .total-row td {
+            border-color: var(--color-accent-indigo);
+        }
+
+        /* ========== STAR RATINGS ========== */
+        .star-rating {
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        /* ========== BOOKING URGENCY BADGES ========== */
+        .urgency-badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: var(--radius-sm);
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .urgency-badge.red {
+            background: rgba(196, 30, 58, 0.15);
+            color: var(--color-accent-primary);
+        }
+
+        .urgency-badge.orange {
+            background: rgba(255, 140, 0, 0.15);
+            color: #CC6600;
+        }
+
+        .urgency-badge.green {
+            background: rgba(139, 157, 111, 0.15);
+            color: var(--color-accent-secondary);
+        }
+
+        /* ========== FOOD CARDS ========== */
+        .food-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .food-card {
+            display: flex;
+            gap: var(--spacing-md);
+            background: var(--color-bg-card);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-card);
+            transition: all 0.3s ease;
+        }
+
+        .food-card:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-2px);
+        }
+
+        .food-emoji {
+            font-size: 40px;
+            line-height: 1;
+            flex-shrink: 0;
+        }
+
+        .food-content h4 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--color-text-primary);
+        }
+
+        .food-content p {
+            font-size: 13px;
+            line-height: 1.5;
+            margin: 0;
+            color: var(--color-text-muted);
+        }
+
+        .food-price {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--color-accent-primary);
+            margin-top: 4px;
+        }
+
+        /* ========== CHECKLIST ========== */
+        .checklist {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+            padding: var(--spacing-md);
+            background: var(--color-bg-card);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item:hover {
+            box-shadow: var(--shadow-card);
+        }
+
+        .checklist-item.completed {
+            background: rgba(139, 157, 111, 0.08);
+            border-color: var(--color-accent-secondary);
+        }
+
+        .checklist-item input[type="checkbox"] {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--color-accent-indigo);
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            flex-shrink: 0;
+            margin-top: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item input[type="checkbox"]:checked {
+            background: var(--color-accent-indigo);
+            position: relative;
+        }
+
+        .checklist-item input[type="checkbox"]:checked::after {
+            content: '✓';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .checklist-item label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 14px;
+            color: var(--color-text-primary);
+        }
+
+        .checklist-item.completed label {
+            text-decoration: line-through;
+            color: var(--color-text-muted);
+        }
+
+        .checklist-section-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-accent-indigo);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-md);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ========== BOTTOM NAV ========== */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--color-bg-card);
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            z-index: 100;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        @supports (padding: max(0px)) {
+            .bottom-nav {
+                padding-bottom: max(0px, env(safe-area-inset-bottom));
+            }
+        }
+
+        .nav-button {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 8px;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: var(--color-text-muted);
+            transition: all 0.3s ease;
+            position: relative;
+            font-family: var(--font-sans);
+        }
+
+        .nav-button:hover {
+            color: var(--color-accent-primary);
+        }
+
+        .nav-button.active {
+            color: var(--color-accent-primary);
+        }
+
+        .nav-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+        }
+
+        .nav-button.active .nav-label {
+            display: block;
+        }
+
+        .nav-label {
+            display: none;
+        }
+
+        .nav-button.active::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--color-accent-primary);
+        }
+
+        /* ========== PROGRESS BAR ========== */
+        .progress-bar {
+            height: 3px;
+            background: var(--color-border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-osaka), var(--color-kyoto), var(--color-tokyo));
+            transition: width 0.6s ease;
+        }
+
+        /* ========== TRIP INFO ========== */
+        .trip-info {
+            background: var(--color-bg-card);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--color-border);
+            box-shadow: var(--shadow-card);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .trip-info-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--spacing-sm) 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .trip-info-row:last-child {
+            border-bottom: none;
+        }
+
+        .trip-info-label {
+            font-weight: 600;
+            font-size: 13px;
+            color: var(--color-text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .trip-info-value {
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--color-text-primary);
+        }
+
+        /* ========== FOOTER ========== */
+        .footer {
+            text-align: center;
+            padding: var(--spacing-lg) var(--spacing-sm);
+            font-size: 12px;
+            color: var(--color-text-muted);
+            border-top: 1px solid var(--color-border);
+            margin-top: var(--spacing-xl);
+        }
+
+        /* ========== UTILITIES ========== */
+        .text-center {
+            text-align: center;
+        }
+
+        .mb-md {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .mb-lg {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .mt-lg {
+            margin-top: var(--spacing-lg);
+        }
+
+        .text-muted {
+            color: var(--color-text-muted);
+        }
+
+        .text-primary {
+            color: var(--color-accent-primary);
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--color-border);
+            margin: var(--spacing-lg) 0;
+        }
+
+        /* ========== REDUCED MOTION ========== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 var(--spacing-md);
+            }
+
+            .food-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            h1 {
+                font-size: 52px;
+            }
+
+            h2 {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- ========== SECTION 1: OVERVIEW ========== -->
+    <section id="overview" class="section active">
+        <div class="container">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>🇯🇵 Japan 2026</h1>
+                    <p class="hero-subtitle">Anand • Saranya • Aila</p>
+                    <div class="route-pills">
+                        <span class="pill osaka">Osaka</span>
+                        <span class="arrow">→</span>
+                        <span class="pill kyoto">Kyoto</span>
+                        <span class="arrow">→</span>
+                        <span class="pill tokyo">Tokyo</span>
+                        <span class="arrow">→</span>
+                        <span class="pill osaka">Osaka (KIX)</span>
+                    </div>
+                    <div class="date-strip">
+                        <span class="label">13 Nights</span>
+                        <p>11–23 September 2026</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="alert-container">
+                <div class="alert silver-week" id="silverWeekAlert">
+                    <span class="alert-icon">🔴</span>
+                    <div class="alert-content">
+                        <h4>Silver Week (Sep 19–23)</h4>
+                        <p>Japan's rare 5-day holiday. Book everything now. Prices surge, crowds peak. Our itinerary keeps Osaka/Kyoto early (Sep 11–16) — smart positioning.</p>
+                    </div>
+                    <button class="alert-close" onclick="this.parentElement.style.display='none'">✕</button>
+                </div>
+                <div class="alert typhoon" id="typhoonAlert">
+                    <span class="alert-icon">🌀</span>
+                    <div class="alert-content">
+                        <h4>Typhoon Season</h4>
+                        <p>Expect 1–2 typhoons during trip. Get travel insurance with trip disruption cover. Late September 22–26°C comfortable; watch alerts daily.</p>
+                    </div>
+                    <button class="alert-close" onclick="this.parentElement.style.display='none'">✕</button>
+                </div>
+            </div>
+
+            <div class="trip-info">
+                <div class="trip-info-row">
+                    <span class="trip-info-label">Budget</span>
+                    <span class="trip-info-value">~AUD $7,700–$10,500</span>
+                </div>
+                <div class="trip-info-row">
+                    <span class="trip-info-label">Days Until Trip</span>
+                    <span class="trip-info-value" id="daysUntil">—</span>
+                </div>
+                <div class="trip-info-row">
+                    <span class="trip-info-label">Cities</span>
+                    <span class="trip-info-value">3 (Osaka, Kyoto, Tokyo)</span>
+                </div>
+                <div class="trip-info-row">
+                    <span class="trip-info-label">Family Size</span>
+                    <span class="trip-info-value">3 (Anand, Saranya, Aila)</span>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <h2>Trip Highlights</h2>
+            <div style="display: grid; grid-template-columns: 1fr; gap: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+                <div class="card">
+                    <h3>🎪 Iconic Festivals</h3>
+                    <p>Kishiwada Danjiri Festival (4-tonne floats at full speed), Fushimi Inari thousand torii gates, Nara deer park feeding.</p>
+                </div>
+                <div class="card">
+                    <h3>🏯 UNESCO Temples</h3>
+                    <p>Nijo Castle (Kyoto), Kinkakuji (Golden Pavilion), Todai-ji Great Buddha (Nara), Senso-ji (Asakusa Tokyo).</p>
+                </div>
+                <div class="card">
+                    <h3>🎢 Family Magic</h3>
+                    <p>Tokyo DisneySea (world's most beautiful theme park), Osaka Aquarium Kaiyukan, Hakone Open Air Museum & Mt Fuji views.</p>
+                </div>
+                <div class="card">
+                    <h3>🍜 Authentic Food</h3>
+                    <p>Dotonbori food crawl (takoyaki, okonomiyaki), Nishiki Market matcha everything, conveyor belt sushi, Ichiran ramen.</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>🗾 Prepared for Anand, Saranya & Aila • April 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 2: ITINERARY ========== -->
+    <section id="itinerary" class="section">
+        <div class="container">
+            <h2>📅 Day-by-Day Itinerary</h2>
+
+            <!-- OSAKA DAYS -->
+            <h3 style="margin-top: var(--spacing-lg); color: var(--color-osaka); text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px;">Osaka — Sep 11–13</h3>
+
+            <div class="card day-card osaka" style="margin-top: var(--spacing-md);">
+                <div class="card-header">
+                    <span class="city-badge osaka">Osaka</span>
+                    <span class="date-badge">Sep 11 Thu</span>
+                </div>
+                <h3>Arrival Day</h3>
+                <div class="activity-bullet">
+                    <span class="activity-time">6:00–8:00pm</span>
+                    <p>Land at KIX. Allow 60–90 min immigration.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">8:00–8:30pm</span>
+                    <p>Nankai Rapid Service to Namba (~40 min, ~¥970/adult).</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">9:00–9:30pm</span>
+                    <p>Check into MIMARU Namba. Rest up.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">10:00pm</span>
+                    <p>Short Dotonbori walk — Glico running man neon, canal lights. Soak in the energy.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">10:30pm</span>
+                    <p>Late dinner at Ichiran Ramen (open until 3am) or 7-Eleven konbini.</p>
+                </div>
+            </div>
+
+            <div class="card day-card osaka">
+                <div class="card-header">
+                    <span class="city-badge osaka">Osaka</span>
+                    <span class="date-badge">Sep 12 Fri</span>
+                </div>
+                <h3>Kishiwada Danjiri Festival + Dotonbori Food</h3>
+                <div class="activity-bullet">
+                    <span class="activity-time">Morning</span>
+                    <p>Kishiwada Danjiri Festival (30 min south by train). 4-tonne wooden floats at full speed. One of Japan's most intense festivals.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Afternoon</span>
+                    <p>Osaka Castle and grounds — impressive exterior, good for photos. Skip interior for young Aila.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Evening</span>
+                    <p>Full Dotonbori food crawl — takoyaki, kushikatsu, okonomiyaki, Kuromon Market.</p>
+                </div>
+            </div>
+
+            <div class="card day-card osaka">
+                <div class="card-header">
+                    <span class="city-badge osaka">Osaka</span>
+                    <span class="date-badge">Sep 13 Sat</span>
+                </div>
+                <h3>Osaka Aquarium Kaiyukan + Namba</h3>
+                <div class="activity-bullet">
+                    <span class="activity-time">Morning</span>
+                    <p>Osaka Aquarium Kaiyukan — world's largest, whale sharks, giant manta rays, glass tunnel. Allow 2–3 hours.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Afternoon</span>
+                    <p>Tempozan Marketplace and Ferris wheel — views over Osaka Bay. Casual lunch.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Evening</span>
+                    <p>Final Dotonbori and Namba walk — last takoyaki and souvenirs before Kyoto tomorrow.</p>
+                </div>
+            </div>
+
+            <!-- KYOTO DAYS -->
+            <h3 style="margin-top: var(--spacing-lg); color: var(--color-kyoto); text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px;">Kyoto — Sep 14–16</h3>
+
+            <div class="card day-card kyoto" style="margin-top: var(--spacing-md);">
+                <div class="card-header">
+                    <span class="city-badge" style="background: var(--color-kyoto); border-color: var(--color-kyoto);">Kyoto</span>
+                    <span class="date-badge">Sep 14 Sun</span>
+                </div>
+                <h3>Travel to Kyoto + Nijo Castle + Gion Evening</h3>
+                <div class="activity-bullet">
+                    <span class="activity-time">Morning</span>
+                    <p>Check out Osaka. Forward bags to Kyoto via MIMARU luggage service.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Afternoon</span>
+                    <p>Shinkansen Osaka → Kyoto (15 min, ~¥2,900/adult). Check into MIMARU Kyoto Nijo Castle.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Late Afternoon</span>
+                    <p>Nijo Castle — UNESCO, Ninomaru Palace, nightingale floors, gardens.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Evening</span>
+                    <p>Gion district — cobblestone streets, traditional machiya, maiko spotting. Pontocho alley for dinner.</p>
+                </div>
+            </div>
+
+            <div class="card day-card kyoto">
+                <div class="card-header">
+                    <span class="city-badge" style="background: var(--color-kyoto); border-color: var(--color-kyoto);">Kyoto</span>
+                    <span class="date-badge">Sep 15 Mon</span>
+                </div>
+                <h3>Fushimi Inari + Arashiyama Bamboo</h3>
+                <div class="activity-bullet">
+                    <span class="activity-time">6:30am (EARLY)</span>
+                    <p>Fushimi Inari Taisha — thousand torii gates. Go before 8am for crowds. Aila will love the orange tunnels.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Late Morning</span>
+                    <p>Arashiyama — Bamboo Grove, Tenryuji Temple garden, monkey park on the hill.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Afternoon</span>
+                    <p>Sagano Romantic Train or Togetsukyo Bridge walk along the river.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Evening</span>
+                    <p>Nishiki Market (Kyoto's Kitchen) — tofu skewers, fresh yuba, matcha soft serve.</p>
+                </div>
+            </div>
+
+            <div class="card day-card kyoto">
+                <div class="card-header">
+                    <span class="city-badge" style="background: var(--color-kyoto); border-color: var(--color-kyoto);">Kyoto</span>
+                    <span class="date-badge">Sep 16 Tue</span>
+                </div>
+                <h3>Nara Day Trip + Kinkakuji</h3>
+                <div class="activity-bullet">
+                    <span class="activity-time">Morning</span>
+                    <p>Nara day trip (30 min Kintetsu/JR) — Nara Park deer feeding, Todai-ji Great Buddha. Buy deer crackers (shika senbei) ¥200/pack.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Afternoon</span>
+                    <p>Back in Kyoto: Kinkakuji (Golden Pavilion) — iconic gold-leaf temple reflected in pond.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Optional</span>
+                    <p>Ryoanji rock garden, Philosopher's Path walk.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Evening</span>
+                    <p>Kimono dressing experience — book in advance (Gion Chakiraku or Yumeyakata).</p>
+                </div>
+            </div>
+
+            <!-- TOKYO DAYS -->
+            <h3 style="margin-top: var(--spacing-lg); color: var(--color-tokyo); text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px;">Tokyo — Sep 17–22</h3>
+
+            <div class="card day-card tokyo" style="margin-top: var(--spacing-md);">
+                <div class="card-header">
+                    <span class="city-badge tokyo">Tokyo</span>
+                    <span class="date-badge">Sep 17 Thu</span>
+                </div>
+                <h3>Travel to Tokyo + Shinjuku Arrival</h3>
+                <div class="activity-bullet">
+                    <span class="activity-time">Morning</span>
+                    <p>Check out Kyoto. Forward bags to Tokyo MIMARU (arrives next day).</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Afternoon</span>
+                    <p>Shinkansen Kyoto → Tokyo Nozomi (2h 15m, ~¥13,800/adult). Book reserved seat. Check into MIMARU Shinjuku West (carry-on only).</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Evening</span>
+                    <p>Explore Shinjuku — Kabukicho, Omoide Yokocho (Memory Lane) yakitori, Shinjuku Gyoen.</p>
+                </div>
+            </div>
+
+            <div class="card day-card tokyo">
+                <div class="card-header">
+                    <span class="city-badge tokyo">Tokyo</span>
+                    <span class="date-badge">Sep 18 Fri</span>
+                </div>
+                <h3>Asakusa + Shibuya</h3>
+                <div class="activity-bullet">
+                    <span class="activity-time">Early Morning</span>
+                    <p>Senso-ji Temple Asakusa — arrive before 8am. Nakamise shopping street for souvenirs.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Afternoon</span>
+                    <p>Shibuya — Scramble Crossing observation deck (Mag's Park), Harajuku Takeshita Street, crepes for Aila.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Evening</span>
+                    <p>Shibuya Sky or Tokyo Skytree for night views. Dinner at one of the restaurants.</p>
+                </div>
+            </div>
+
+            <div class="card day-card tokyo">
+                <div class="card-header">
+                    <span class="city-badge tokyo">Tokyo</span>
+                    <span class="date-badge">Sep 19 Sat</span>
+                </div>
+                <h3>🎢 Tokyo DisneySea (Silver Week Day 1)</h3>
+                <div class="activity-bullet">
+                    <span class="activity-time">All Day</span>
+                    <p>Full day at DisneySea (world's most beautifully themed park, unique to Japan). Book tickets NOW — Silver Week dates sell out months ahead.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Morning Tip</span>
+                    <p>Use Disney app to book Standby+ passes for top rides. Sep 19 = locals start travelling OUT of Tokyo.</p>
+                </div>
+            </div>
+
+            <div class="card day-card tokyo">
+                <div class="card-header">
+                    <span class="city-badge tokyo">Tokyo</span>
+                    <span class="date-badge">Sep 20 Sun</span>
+                </div>
+                <h3>Akihabara + Pokémon + Tokyo Tower</h3>
+                <div class="activity-bullet">
+                    <span class="activity-time">Morning</span>
+                    <p>Akihabara — electronics, anime, manga, gaming. Pokémon Center Akihabara for Aila.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Midday</span>
+                    <p>Tsukiji Outer Market — fresh sushi, tamagoyaki, seafood on sticks.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Afternoon</span>
+                    <p>Tokyo Tower (360° views), Shiba Park.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Evening</span>
+                    <p>Roppongi Hills for dinner and city night views from Mori Tower.</p>
+                </div>
+            </div>
+
+            <div class="card day-card tokyo">
+                <div class="card-header">
+                    <span class="city-badge tokyo">Tokyo</span>
+                    <span class="date-badge">Sep 21 Mon</span>
+                </div>
+                <h3>🗻 Hakone Day Trip — Mt Fuji + Onsen</h3>
+                <div class="activity-bullet">
+                    <span class="activity-time">Morning</span>
+                    <p>Romancecar express from Shinjuku (~90 min). Book seat in advance.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Midday</span>
+                    <p>Hakone Open Air Museum — outdoor sculpture park with Picasso pavilion. Great for Aila.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Afternoon</span>
+                    <p>Owakudani Valley — volcanic hot spring eggs (kuro tamago), Fuji views on clear days. Hakone Ropeway if weather permits.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Afternoon</span>
+                    <p>Foot onsen (free public foot baths) at Kowakien — perfect for Aila.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Evening</span>
+                    <p>Return to Shinjuku by 7pm. Note: September cloud cover may obscure Fuji — don't plan the view.</p>
+                </div>
+            </div>
+
+            <div class="card day-card tokyo">
+                <div class="card-header">
+                    <span class="city-badge tokyo">Tokyo</span>
+                    <span class="date-badge">Sep 22 Tue</span>
+                </div>
+                <h3>Ueno + Last Shopping + Farewell Dinner</h3>
+                <div class="activity-bullet">
+                    <span class="activity-time">Morning</span>
+                    <p>Ueno Park and Zoo — giant pandas, Autumnal Equinox Day public holiday.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Midday</span>
+                    <p>Final shopping — Ginza for luxury, Shinjuku for electronics, Harajuku for souvenirs.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Afternoon</span>
+                    <p>Pack, MIMARU luggage storage, stroll Shinjuku Gyoen gardens.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Evening</span>
+                    <p>Farewell dinner — kaiseki or shabu-shabu, booked in advance. Splurge night.</p>
+                </div>
+            </div>
+
+            <!-- DEPARTURE -->
+            <div class="card day-card tokyo">
+                <div class="card-header">
+                    <span class="city-badge tokyo">Tokyo</span>
+                    <span class="date-badge">Sep 23 Wed</span>
+                </div>
+                <h3>Departure</h3>
+                <div class="activity-bullet">
+                    <span class="activity-time">Morning</span>
+                    <p>Allow 4.5+ hours from central Tokyo to KIX.</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Options</span>
+                    <p><strong>Option 1:</strong> Narita Express + transfer. <strong>Option 2:</strong> Shinkansen Tokyo → Shin-Osaka, then Haruka to KIX. <strong>Option 3:</strong> Domestic flight Tokyo (HND) → Osaka (ITM/KIX) ~¥10,000/person (JAL/ANA).</p>
+                </div>
+                <div class="activity-bullet">
+                    <span class="activity-time">Next Day</span>
+                    <p>Arrive Melbourne (AEST +2hrs from Japan). Start planning the next adventure!</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>🗾 Prepared for Anand, Saranya & Aila • April 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 3: HOTELS ========== -->
+    <section id="hotels" class="section">
+        <div class="container">
+            <h2>🏨 Accommodation</h2>
+            <p style="color: var(--color-text-muted); margin-bottom: var(--spacing-lg);">All 3 MIMARU apartments — full kitchen, washer/dryer, family-friendly amenities included.</p>
+
+            <div class="hotel-card card">
+                <div class="hotel-name">MIMARU Osaka Namba Station</div>
+                <div class="hotel-dates">Sep 11–13 (3 nights)</div>
+                <div class="hotel-price">~AUD $160–200/night</div>
+                <div class="hotel-description">
+                    <strong>Location:</strong> 6-min walk from Nippombashi Station. Steps from Kuromon Market. Walkable to Dotonbori.
+                </div>
+                <p style="margin-bottom: var(--spacing-sm); font-size: 14px; line-height: 1.6;"><strong>Highlights:</strong> 2BR apartment, separate shower/toilet, in-room washer/dryer, board game lounge, free luggage forwarding to Kyoto, kids play area, free coffee mornings, soft drinks afternoons.</p>
+                <div class="amenity-tags">
+                    <span class="tag">Full Kitchen</span>
+                    <span class="tag">2 Bedrooms</span>
+                    <span class="tag">Washer/Dryer</span>
+                    <span class="tag">Kids Corner</span>
+                    <span class="tag">Luggage Forwarding</span>
+                </div>
+            </div>
+
+            <div class="hotel-card card">
+                <div class="hotel-name">MIMARU Kyoto Nijo Castle</div>
+                <div class="hotel-dates">Sep 14–16 (3 nights)</div>
+                <div class="hotel-price">~AUD $155–200/night</div>
+                <div class="hotel-description">
+                    <strong>Location:</strong> 2-min walk from Sanjo Street. 11-min walk to Nijo Castle. Easy bus to all sights.
+                </div>
+                <p style="margin-bottom: var(--spacing-sm); font-size: 14px; line-height: 1.6;"><strong>Highlights:</strong> In-room washer/dryer every room, tatami floor options, bunk bed rooms, stroller rental, BINGO events with Gacha prizes, kids corner.</p>
+                <div class="amenity-tags">
+                    <span class="tag">Full Kitchen</span>
+                    <span class="tag">Tatami Rooms</span>
+                    <span class="tag">Washer/Dryer</span>
+                    <span class="tag">Bunk Beds</span>
+                    <span class="tag">Stroller Rental</span>
+                    <span class="tag">BINGO Events</span>
+                </div>
+            </div>
+
+            <div class="hotel-card card">
+                <div class="hotel-name">MIMARU Tokyo Shinjuku West</div>
+                <div class="hotel-dates">Sep 17–22 (6 nights)</div>
+                <div class="hotel-price">~AUD $200–260/night</div>
+                <div class="hotel-description">
+                    <strong>Location:</strong> 8-min walk from JR Shinjuku Station. Near Shinjuku Gyoen.
+                </div>
+                <p style="margin-bottom: var(--spacing-sm); font-size: 14px; line-height: 1.6;"><strong>Highlights:</strong> ~40m² rooms, full kitchen, Sep = low season pricing, #1 Specialty Lodging Nishishinjuku (Tripadvisor), central to all Tokyo attractions.</p>
+                <div class="amenity-tags">
+                    <span class="tag">Full Kitchen</span>
+                    <span class="tag">40m² Rooms</span>
+                    <span class="tag">Washer/Dryer</span>
+                    <span class="tag">Central Location</span>
+                    <span class="tag">Low Season Rates</span>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>Luggage Forwarding (Yamato Transport)</h3>
+            <div class="card">
+                <p style="margin-bottom: var(--spacing-sm);"><strong>Service:</strong> Transfer bags between hotels. Cost: ~¥1,500–2,500/bag per delivery.</p>
+                <p style="margin-bottom: var(--spacing-sm);"><strong>Process:</strong> Book day before at hotel. Arrives next afternoon.</p>
+                <p style="margin-bottom: 0;"><strong>Critical Tip:</strong> Essential with young Aila on Shinkansen days. Lightens load significantly.</p>
+            </div>
+
+            <div class="footer">
+                <p>🗾 Prepared for Anand, Saranya & Aila • April 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 4: TRANSPORT ========== -->
+    <section id="transport" class="section">
+        <div class="container">
+            <h2>🚄 Transport & IC Card</h2>
+
+            <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Shinkansen Routes</h3>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Route</th>
+                            <th>Duration</th>
+                            <th>Fare/Adult</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Osaka → Kyoto</td>
+                            <td>~15 min</td>
+                            <td>¥2,900 (~AUD $29)</td>
+                            <td>Sep 14</td>
+                        </tr>
+                        <tr>
+                            <td>Kyoto → Tokyo (Nozomi)</td>
+                            <td>2h 15m</td>
+                            <td>¥13,800 (~AUD $138)</td>
+                            <td>Sep 17</td>
+                        </tr>
+                        <tr>
+                            <td>Tokyo → Shin-Osaka</td>
+                            <td>2h 30m</td>
+                            <td>¥13,800 (~AUD $138)</td>
+                            <td>Sep 23</td>
+                        </tr>
+                        <tr>
+                            <td>Shin-Osaka → KIX (Haruka)</td>
+                            <td>~75 min</td>
+                            <td>¥3,600 (~AUD $36)</td>
+                            <td>Sep 23</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card" style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-lg);">
+                <h3>JR Pass: Worth It?</h3>
+                <p><strong>No.</strong> Total Shinkansen ~¥32,000–35,000/adult. 14-day pass = ¥70,000 (~AUD $720). Only pays off with many day trips. We're set.</p>
+            </div>
+
+            <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">IC Card (Suica/ICOCA)</h3>
+            <div class="card">
+                <div class="activity-bullet" style="border-left: none; padding-left: 0;">
+                    <p><strong>Load on arrival at KIX:</strong> ¥15,000–20,000/person.</p>
+                </div>
+                <div class="activity-bullet" style="border-left: none; padding-left: 0;">
+                    <p><strong>Works on:</strong> Every subway, JR local train, bus, convenience store.</p>
+                </div>
+                <div class="activity-bullet" style="border-left: none; padding-left: 0;">
+                    <p><strong>Kids:</strong> Aila under 6 rides JR free (bring passport for confirmation).</p>
+                </div>
+                <div class="activity-bullet" style="border-left: none; padding-left: 0;">
+                    <p><strong>Top up:</strong> Any station or convenience store when running low.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: var(--spacing-lg); margin-bottom: var(--spacing-md);">Getting to/from Airports</h3>
+            <div class="card">
+                <h4 style="margin-bottom: var(--spacing-sm); font-size: 14px; font-weight: 600;">Arrival: KIX → Osaka (Sep 11)</h4>
+                <p style="margin-bottom: var(--spacing-sm);">Nankai Rapid Service to Namba: ~40 min, ~¥970/adult. No transfers needed.</p>
+
+                <h4 style="margin-top: var(--spacing-md); margin-bottom: var(--spacing-sm); font-size: 14px; font-weight: 600;">Departure: Tokyo → KIX (Sep 23)</h4>
+                <p style="margin-bottom: var(--spacing-sm);"><strong>Option 1 (Shinkansen):</strong> Tokyo → Shin-Osaka (2h 30m, ¥13,800), then Haruka to KIX (75 min, ¥3,600). Total ~4 hours + transfers.</p>
+                <p style="margin-bottom: var(--spacing-sm);"><strong>Option 2 (Flight):</strong> Tokyo (HND) → Osaka (ITM or KIX) ~1 hour, ~¥10,000/person. Faster, easier with Aila.</p>
+                <p>Recommend Option 2 (flight) for speed and less stress on departure day.</p>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>Daily Transport Budget</h3>
+            <div class="card">
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--color-border);">
+                    <span><strong>Per Adult / Day</strong></span>
+                    <span style="color: var(--color-accent-primary); font-weight: 600;">~¥1,500–2,000 (~AUD $15–20)</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--color-border);">
+                    <span><strong>Osaka (3 days)</strong></span>
+                    <span style="color: var(--color-text-muted);">~AUD $45–60</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--color-border);">
+                    <span><strong>Kyoto (3 days)</strong></span>
+                    <span style="color: var(--color-text-muted);">~AUD $45–60</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: var(--spacing-sm) 0;">
+                    <span><strong>Tokyo (6 days)</strong></span>
+                    <span style="color: var(--color-text-muted);">~AUD $90–120</span>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>🗾 Prepared for Anand, Saranya & Aila • April 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 5: FOOD ========== -->
+    <section id="food" class="section">
+        <div class="container">
+            <h2>🍜 Food Guide</h2>
+
+            <h3 style="margin-top: var(--spacing-lg); color: var(--color-osaka); text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px;">Osaka — Food Paradise</h3>
+            <div class="food-grid" style="margin-top: var(--spacing-md);">
+                <div class="food-card">
+                    <span class="food-emoji">🐙</span>
+                    <div class="food-content">
+                        <h4>Takoyaki</h4>
+                        <p>Octopus balls — crispy outside, molten inside. Aila loves this.</p>
+                        <div class="food-price">¥600–800 for 8 pieces</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="food-emoji">🥞</span>
+                    <div class="food-content">
+                        <h4>Okonomiyaki</h4>
+                        <p>Savoury Japanese pancake with layered toppings. Dotonbori has multiple spots.</p>
+                        <div class="food-price">¥800–1,200</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="food-emoji">🍢</span>
+                    <div class="food-content">
+                        <h4>Kushikatsu</h4>
+                        <p>Deep-fried skewers. Rule: never double-dip in the sauce.</p>
+                        <div class="food-price">¥1,500–3,000 per person</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="food-emoji">🦀</span>
+                    <div class="food-content">
+                        <h4>Kuromon Market Specials</h4>
+                        <p>Crab claw, fresh oysters, wagyu beef skewers. Premium eats.</p>
+                        <div class="food-price">¥1,000–3,000 per item</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: var(--spacing-lg); color: var(--color-kyoto); text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px;">Kyoto — Refined Tastes</h3>
+            <div class="food-grid" style="margin-top: var(--spacing-md);">
+                <div class="food-card">
+                    <span class="food-emoji">🍱</span>
+                    <div class="food-content">
+                        <h4>Kaiseki</h4>
+                        <p>Traditional multi-course meal. Book for special dinner. Elaborate and art.</p>
+                        <div class="food-price">¥8,000–20,000+ per person</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="food-emoji">🍲</span>
+                    <div class="food-content">
+                        <h4>Yudofu</h4>
+                        <p>Silken tofu hot pot. Very Kyoto, very gentle flavour. Perfect for Aila.</p>
+                        <div class="food-price">¥1,500–3,000 per person</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="food-emoji">🍵</span>
+                    <div class="food-content">
+                        <h4>Matcha Everything</h4>
+                        <p>Soft serve, mochi, latte, Kit Kats. Nishiki Market is matcha heaven.</p>
+                        <div class="food-price">¥500–1,500</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="food-emoji">🍲</span>
+                    <div class="food-content">
+                        <h4>Obanzai</h4>
+                        <p>Kyoto home cooking — small dishes at Nishiki Market stalls. Comfort food.</p>
+                        <div class="food-price">¥800–1,500 per dish</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 style="margin-top: var(--spacing-lg); color: var(--color-tokyo); text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px;">Tokyo — Modern Fusion</h3>
+            <div class="food-grid" style="margin-top: var(--spacing-md);">
+                <div class="food-card">
+                    <span class="food-emoji">🍜</span>
+                    <div class="food-content">
+                        <h4>Ramen</h4>
+                        <p>Ichiran (solo booths) or local neighbourhood shop. Warm, satisfying.</p>
+                        <div class="food-price">¥800–1,200 per bowl</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="food-emoji">🍣</span>
+                    <div class="food-content">
+                        <h4>Tsukiji Outer Market Breakfast</h4>
+                        <p>Maguro don (tuna rice bowl), tamagoyaki (rolled egg), fresh sashimi.</p>
+                        <div class="food-price">¥1,500–3,000 per person</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="food-emoji">🍣</span>
+                    <div class="food-content">
+                        <h4>Conveyor Belt Sushi</h4>
+                        <p>Sushiro or Kura Sushi — cheap, great, Aila-proof. Plates stack up fast.</p>
+                        <div class="food-price">¥2,000–3,500 per person</div>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <span class="food-emoji">🏪</span>
+                    <div class="food-content">
+                        <h4>Convenience Store Culture</h4>
+                        <p>7-Eleven, Lawson, FamilyMart — open 24/7. Rice balls, bento, drinks.</p>
+                        <div class="food-price">¥500–1,000 per item</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>Picky Eater Survival (Aila)</h3>
+            <div class="card">
+                <p style="margin-bottom: var(--spacing-sm);">Aila will find plenty to eat. Safe options everywhere:</p>
+                <p style="margin-bottom: 0;">Ramen, udon, karaage, rice balls, curry rice, tamagoyaki, steamed buns, konbini items — all broadly loved by children. Konbini open 24/7 everywhere. No need to stress about meals.</p>
+            </div>
+
+            <div class="footer">
+                <p>🗾 Prepared for Anand, Saranya & Aila • April 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 6: BUDGET ========== -->
+    <section id="budget" class="section">
+        <div class="container">
+            <h2>💴 Budget Breakdown</h2>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Estimate (AUD)</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Accommodation (12 nights)</strong></td>
+                            <td><strong>$2,400–$2,800</strong></td>
+                            <td>MIMARU x3 cities, avg ~$215/night</td>
+                        </tr>
+                        <tr>
+                            <td>Flights MEL ↔ KIX</td>
+                            <td>$1,800–$3,000</td>
+                            <td>Budget $900–1,500pp. Book now.</td>
+                        </tr>
+                        <tr>
+                            <td>Shinkansen</td>
+                            <td>$600–$700</td>
+                            <td>Per adult x2. Kids under 6 often free.</td>
+                        </tr>
+                        <tr>
+                            <td>IC Card daily transport</td>
+                            <td>$150–$200</td>
+                            <td>~$12–15/day per adult in-city</td>
+                        </tr>
+                        <tr>
+                            <td>Activities & attractions</td>
+                            <td>$800–$1,200</td>
+                            <td>Disney, museums, Hakone, etc.</td>
+                        </tr>
+                        <tr>
+                            <td>Food</td>
+                            <td>$1,200–$1,600</td>
+                            <td>~$100/day family of 3</td>
+                        </tr>
+                        <tr>
+                            <td>Luggage forwarding</td>
+                            <td>$100–$150</td>
+                            <td>3 transfers x 2–3 bags</td>
+                        </tr>
+                        <tr>
+                            <td>Travel insurance</td>
+                            <td>$150–$250</td>
+                            <td><strong>Essential for typhoon cover</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Misc (shopping, gifts)</td>
+                            <td>$500–$800</td>
+                            <td>Souvenirs, Pokemon merch, etc.</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td><strong>TOTAL</strong></td>
+                            <td><strong>$7,700–$10,500</strong></td>
+                            <td><strong>13-night family adventure</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>💵 Cash Tips</h3>
+            <div class="card">
+                <div class="activity-bullet" style="border-left: none; padding-left: 0;">
+                    <p><strong>Japan is cash-heavy.</strong> Carry ¥20,000–30,000/adult at all times (~AUD $200–300).</p>
+                </div>
+                <div class="activity-bullet" style="border-left: none; padding-left: 0;">
+                    <p><strong>Withdraw from:</strong> 7-Eleven or Japan Post ATMs (most reliable). Your bank card works fine.</p>
+                </div>
+                <div class="activity-bullet" style="border-left: none; padding-left: 0;">
+                    <p><strong>Before departure:</strong> Notify your bank of Japan travel dates (Sep 11–23). Prevents fraud locks.</p>
+                </div>
+                <div class="activity-bullet" style="border-left: none; padding-left: 0;">
+                    <p><strong>Cards:</strong> Visa/Mastercard widely accepted in cities, but always have cash backup.</p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: var(--spacing-lg);">High-Impact Savings</h3>
+            <div class="card">
+                <div style="margin-bottom: var(--spacing-md);">
+                    <h4 style="font-size: 14px; font-weight: 600; margin-bottom: var(--spacing-xs);">Skip JR Pass</h4>
+                    <p style="font-size: 13px; margin: 0; color: var(--color-text-muted);">We don't need it. Our Shinkansen routes cost ~¥32–35k/person. Pass = ¥70k. Not worth it.</p>
+                </div>
+                <div style="margin-bottom: var(--spacing-md);">
+                    <h4 style="font-size: 14px; font-weight: 600; margin-bottom: var(--spacing-xs);">Fly out (Sep 23), don't train</h4>
+                    <p style="font-size: 13px; margin: 0; color: var(--color-text-muted);">Flight Tokyo (HND) → Osaka (ITM) ~¥10k/person. Faster, less stress on departure day. Shinkansen = 4+ hours + transfers.</p>
+                </div>
+                <div>
+                    <h4 style="font-size: 14px; font-weight: 600; margin-bottom: var(--spacing-xs);">Konbini meals</h4>
+                    <p style="font-size: 13px; margin: 0; color: var(--color-text-muted);">Mix fine dining with 7-Eleven rice balls and onigiri. Saves ~AUD $50–100 over trip.</p>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>🗾 Prepared for Anand, Saranya & Aila • April 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SECTION 7: CHECKLIST ========== -->
+    <section id="checklist" class="section">
+        <div class="container">
+            <h2>✅ Booking & Packing Checklist</h2>
+
+            <h3 style="margin-top: var(--spacing-lg); color: var(--color-accent-indigo); text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px;">Booking Priority (Critical)</h3>
+
+            <div class="checklist" style="margin-top: var(--spacing-md);">
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">1. Book MIMARU Osaka Namba Station (Sep 11–13)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">2. Book MIMARU Kyoto Nijo Castle (Sep 14–16)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">3. Book MIMARU Tokyo Shinjuku West (Sep 17–22)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">4. Book Tokyo Disney (Disneyland or DisneySea) — 3–4 months ahead</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">5. Book Shinkansen reserved seats (Kyoto→Tokyo Sep 17, Tokyo→Shin-Osaka Sep 23)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">6. Book Tokyo→Osaka domestic flight (Sep 23, optional but recommended)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">7. Purchase travel insurance with typhoon cover</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">8. Order pocket WiFi or eSIM from Australia</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">9. Notify bank of Japan travel dates (Sep 11–23)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">10. Book Hakone Romancecar seat (Sep 21, 1–2 weeks ahead)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">11. Book kimono dressing experience, Kyoto (2–4 weeks ahead)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">12. Register for Sumo — Grand Tournament Sep 13–27 (optional, Klook)</label>
+                </label>
+            </div>
+
+            <div class="checklist-section-title" style="margin-top: var(--spacing-xl);">Packing — Adults</div>
+            <div class="checklist">
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Light breathable tops x6–7</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Shorts or light pants x3–4</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Light cardigan or hoodie x1 (evenings)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Comfortable walking shoes (CRITICAL — 15,000+ steps daily)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Slip-on shoes (easy for temple visits)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Compact umbrella</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Sunscreen SPF 50+</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Power adapter (Japan 100V, Type A plug)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Phone charger and backup battery</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Passports + copies (keep separate)</label>
+                </label>
+            </div>
+
+            <div class="checklist-section-title">Packing — Aila</div>
+            <div class="checklist">
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Light comfortable clothes x5–6</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Good sneakers + sandals</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Kids backpack for day outings</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Favourite small toys / comfort items</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Portable snacks from home (for transitions)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Kid sunscreen</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Baby wipes (always useful)</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Universal power plug for tablets</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Small Pokémon or anime figure as "tour mascot"</label>
+                </label>
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-check">
+                    <label style="cursor: pointer; margin: 0;">Lightweight rain jacket</label>
+                </label>
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>📱 Apps to Install Before Leaving</h3>
+            <div class="card">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                    <div>
+                        <p style="margin: 0; font-weight: 600; font-size: 13px;">Google Maps</p>
+                        <p style="margin: 0; font-size: 12px; color: var(--color-text-muted);">Navigation (download offline Japan)</p>
+                    </div>
+                    <div>
+                        <p style="margin: 0; font-weight: 600; font-size: 13px;">Google Translate</p>
+                        <p style="margin: 0; font-size: 12px; color: var(--color-text-muted);">Camera translation for menus</p>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                    <div>
+                        <p style="margin: 0; font-weight: 600; font-size: 13px;">Suica/ICOCA app</p>
+                        <p style="margin: 0; font-size: 12px; color: var(--color-text-muted);">Digital IC card (Apple Pay)</p>
+                    </div>
+                    <div>
+                        <p style="margin: 0; font-weight: 600; font-size: 13px;">Japan Official Travel App</p>
+                        <p style="margin: 0; font-size: 12px; color: var(--color-text-muted);">Disaster/typhoon alerts</p>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+                    <div>
+                        <p style="margin: 0; font-weight: 600; font-size: 13px;">Hyperdia / Jorudan</p>
+                        <p style="margin: 0; font-size: 12px; color: var(--color-text-muted);">Train planning with fares</p>
+                    </div>
+                    <div>
+                        <p style="margin: 0; font-weight: 600; font-size: 13px;">Tokyo Disney app</p>
+                        <p style="margin: 0; font-size: 12px; color: var(--color-text-muted);">Wait times, reservations, maps</p>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-sm);">
+                    <div>
+                        <p style="margin: 0; font-weight: 600; font-size: 13px;">Tabelog</p>
+                        <p style="margin: 0; font-size: 12px; color: var(--color-text-muted);">Restaurant reviews (best in Japan)</p>
+                    </div>
+                    <div>
+                        <p style="margin: 0; font-weight: 600; font-size: 13px;">LINE</p>
+                        <p style="margin: 0; font-size: 12px; color: var(--color-text-muted);">Messaging — many businesses use</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer">
+                <p>🗾 Prepared for Anand, Saranya & Aila • April 2026</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOTTOM NAVIGATION -->
+    <div class="bottom-nav">
+        <button class="nav-button active" onclick="switchSection('overview', this)">
+            <span>🗾</span>
+            <span class="nav-label">Overview</span>
+        </button>
+        <button class="nav-button" onclick="switchSection('itinerary', this)">
+            <span>📅</span>
+            <span class="nav-label">Itinerary</span>
+        </button>
+        <button class="nav-button" onclick="switchSection('hotels', this)">
+            <span>🏨</span>
+            <span class="nav-label">Hotels</span>
+        </button>
+        <button class="nav-button" onclick="switchSection('transport', this)">
+            <span>🚄</span>
+            <span class="nav-label">Transport</span>
+        </button>
+        <button class="nav-button" onclick="switchSection('food', this)">
+            <span>🍜</span>
+            <span class="nav-label">Food</span>
+        </button>
+        <button class="nav-button" onclick="switchSection('budget', this)">
+            <span>💴</span>
+            <span class="nav-label">Budget</span>
+        </button>
+        <button class="nav-button" onclick="switchSection('checklist', this)">
+            <span>✅</span>
+            <span class="nav-label">Checklist</span>
+        </button>
+    </div>
+
+    <script>
+        // ========== NAVIGATION ==========
+        function switchSection(sectionId, button) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Show selected section
+            const selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            // Update nav buttons
+            const navButtons = document.querySelectorAll('.nav-button');
+            navButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Save to localStorage
+            localStorage.setItem('lastSection', sectionId);
+        }
+
+        // ========== CHECKLIST PERSISTENCE ==========
+        function initCheckboxes() {
+            const checkboxes = document.querySelectorAll('.checklist-check');
+            checkboxes.forEach((checkbox, index) => {
+                const key = `checklist-item-${index}`;
+                const isChecked = localStorage.getItem(key) === 'true';
+                checkbox.checked = isChecked;
+                updateChecklistItem(checkbox);
+
+                checkbox.addEventListener('change', () => {
+                    localStorage.setItem(key, checkbox.checked);
+                    updateChecklistItem(checkbox);
+                });
+            });
+        }
+
+        function updateChecklistItem(checkbox) {
+            const item = checkbox.closest('.checklist-item');
+            if (checkbox.checked) {
+                item.classList.add('completed');
+            } else {
+                item.classList.remove('completed');
+            }
+        }
+
+        // ========== PROGRESS BAR & DAYS UNTIL TRIP ==========
+        function updateProgress() {
+            const tripStart = new Date('2026-09-11');
+            const tripEnd = new Date('2026-09-23');
+            const today = new Date();
+
+            // Ensure consistent date comparison
+            today.setHours(0, 0, 0, 0);
+            tripStart.setHours(0, 0, 0, 0);
+            tripEnd.setHours(0, 0, 0, 0);
+
+            const tripDuration = tripEnd.getTime() - tripStart.getTime();
+            const elapsed = today.getTime() - tripStart.getTime();
+            const progress = Math.max(0, Math.min(100, (elapsed / tripDuration) * 100));
+
+            document.getElementById('progressFill').style.width = progress + '%';
+
+            // Days until trip
+            const daysUntil = Math.ceil((tripStart.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+            const daysUntilEl = document.getElementById('daysUntil');
+            if (daysUntil > 0) {
+                daysUntilEl.textContent = daysUntil + ' days';
+            } else if (daysUntil === 0) {
+                daysUntilEl.textContent = 'TODAY!';
+                daysUntilEl.style.color = '#C41E3A';
+                daysUntilEl.style.fontWeight = '700';
+            } else if (daysUntil > -14) {
+                daysUntilEl.textContent = 'In progress!';
+                daysUntilEl.style.color = '#8B9D6F';
+                daysUntilEl.style.fontWeight = '700';
+            } else {
+                daysUntilEl.textContent = 'Trip complete! 🎉';
+                daysUntilEl.style.color = '#2A3F6F';
+            }
+        }
+
+        // ========== INTERSECTION OBSERVER FOR CARD ANIMATIONS ==========
+        function initCardAnimations() {
+            const cards = document.querySelectorAll('.card');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 0.6s var(--transition-smooth) forwards';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            cards.forEach(card => observer.observe(card));
+        }
+
+        // ========== RESTORE LAST SECTION ==========
+        function restoreLastSection() {
+            const lastSection = localStorage.getItem('lastSection') || 'overview';
+            const button = document.querySelector(`[onclick*="'${lastSection}'"]`);
+            if (button) {
+                switchSection(lastSection, button);
+            }
+        }
+
+        // ========== INITIALIZE ==========
+        document.addEventListener('DOMContentLoaded', () => {
+            updateProgress();
+            initCheckboxes();
+            initCardAnimations();
+            restoreLastSection();
+
+            // Update progress on date change (midnight)
+            setInterval(updateProgress, 1000 * 60 * 60);
+
+            // Reduce motion support
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.documentElement.style.setProperty('--transition-smooth', '0.01ms');
+            }
+        });
+
+        // Make checklist items clickable (toggle checkbox on label click)
+        document.addEventListener('click', (e) => {
+            if (e.target.tagName === 'LABEL' && e.target.classList.contains('checklist-item')) {
+                const checkbox = e.target.querySelector('input[type="checkbox"]');
+                if (checkbox) {
+                    checkbox.click();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

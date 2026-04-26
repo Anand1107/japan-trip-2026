@@ -1,49 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Noto+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --color-bg-primary: #F5EFE6;
-    --color-bg-alt: #FDFAF6;
-    --color-bg-card: #FFFFFF;
-    --color-text-primary: #1C1C1C;
-    --color-text-muted: #7A7A7A;
-    --color-accent-primary: #C41E3A;
-    --color-accent-secondary: #8B9D6F;
-    --color-accent-indigo: #2A3F6F;
-    --color-accent-pink: #FFB7C5;
-    --color-border: #E8E0D5;
-    --color-osaka: #C41E3A;
-    --color-kyoto: #8B9D6F;
-    --color-tokyo: #2A3F6F;
+    /* Jakub design tokens */
+    --bg: #FAFAF9;
+    --bg-card: #FFFFFF;
+    --text: #1A1A1A;
+    --text-muted: #6B6B6B;
+    --text-subtle: #A0A0A0;
+
+    /* OKLCH city colours */
+    --osaka:       oklch(0.45 0.22 22);
+    --osaka-bg:    oklch(0.97 0.02 22);
+    --kyoto:       oklch(0.48 0.12 148);
+    --kyoto-bg:    oklch(0.97 0.02 148);
+    --tokyo:       oklch(0.32 0.16 262);
+    --tokyo-bg:    oklch(0.96 0.03 262);
+
+    /* Fallback hex */
+    --osaka-hex:  #B91A30;
+    --kyoto-hex:  #5A7A5A;
+    --tokyo-hex:  #1E3A6E;
+
+    /* Jakub shadow-border system — no hard lines */
+    --shadow-xs:    0 0 0 1px rgba(0,0,0,0.05);
+    --shadow-sm:    0 0 0 1px rgba(0,0,0,0.06), 0 1px 2px -1px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
+    --shadow-md:    0 0 0 1px rgba(0,0,0,0.06), 0 2px 8px -2px rgba(0,0,0,0.07), 0 4px 12px rgba(0,0,0,0.04);
+    --shadow-hover: 0 0 0 1px rgba(0,0,0,0.08), 0 4px 16px -4px rgba(0,0,0,0.10), 0 8px 24px rgba(0,0,0,0.05);
+
+    /* Concentric radius */
+    --r-xs:  6px;
+    --r-sm:  10px;
+    --r-md:  14px;
+    --r-lg:  18px;
+    --r-xl:  22px;
+
+    --font-sans: 'Inter', system-ui, sans-serif;
     --font-serif: 'DM Serif Display', serif;
-    --font-sans: 'Noto Sans', sans-serif;
-    --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.07);
-    --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.10);
-    --radius-md: 12px;
-    --radius-sm: 8px;
-    --transition-smooth: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+    --transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-  html { font-family: var(--font-sans); color: var(--color-text-primary); background-color: var(--color-bg-primary); scroll-behavior: smooth; }
-  body { background: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-alt) 100%); min-height: 100dvh; overflow-x: hidden; padding-bottom: 80px; }
-  @supports (padding: max(0px)) { body { padding-bottom: calc(80px + max(0px, env(safe-area-inset-bottom))); } }
+
+  html {
+    font-family: var(--font-sans);
+    color: var(--text);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--bg);
+    min-height: 100dvh;
+    overflow-x: hidden;
+    padding-bottom: 80px;
+  }
+
+  @supports (padding: max(0px)) {
+    body {
+      padding-bottom: calc(80px + max(0px, env(safe-area-inset-bottom)));
+    }
+  }
 }
 
 @layer components {
-  .card { background: var(--color-bg-card); border-radius: var(--radius-md); padding: 24px; box-shadow: var(--shadow-card); border: 1px solid var(--color-border); transition: all 0.3s ease; }
-  .card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
-  .pill { background: var(--color-bg-card); border: 1px solid var(--color-border); padding: 8px 16px; border-radius: var(--radius-md); font-size: 12px; font-weight: 500; }
-  .pill.osaka { background: var(--color-osaka); color: white; border-color: var(--color-osaka); }
-  .pill.kyoto { background: var(--color-kyoto); color: white; border-color: var(--color-kyoto); }
-  .pill.tokyo { background: var(--color-tokyo); color: white; border-color: var(--color-tokyo); }
-  .tag { background: var(--color-bg-alt); padding: 4px 10px; border-radius: var(--radius-sm); font-size: 12px; font-weight: 500; color: var(--color-text-primary); border: 1px solid var(--color-border); }
-  .editable-field { border-bottom: 2px dashed transparent; transition: border-color 0.2s ease; cursor: default; }
-  .edit-mode .editable-field { border-bottom-color: var(--color-accent-indigo); cursor: text; background: rgba(42, 63, 111, 0.03); border-radius: 4px; padding: 2px 4px; outline: none; }
-  .edit-mode .editable-field:focus { border-bottom-color: var(--color-accent-primary); background: rgba(196, 30, 58, 0.03); }
+  /* Shadow-border card (jakub pattern — no hard borders) */
+  .card {
+    background: var(--bg-card);
+    border-radius: var(--r-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+  .card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-1px);
+  }
+  .card-flat {
+    background: var(--bg-card);
+    border-radius: var(--r-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-xs);
+  }
+
+  /* City accent pill (concentric: r-sm inside card r-lg) */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: var(--r-sm);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+  }
+  .pill-osaka { background: var(--osaka-bg); color: var(--osaka-hex); }
+  .pill-kyoto  { background: var(--kyoto-bg);  color: var(--kyoto-hex);  }
+  .pill-tokyo  { background: var(--tokyo-bg);  color: var(--tokyo-hex);  }
+
+  /* Tag */
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 8px;
+    border-radius: var(--r-xs);
+    font-size: 11px;
+    font-weight: 500;
+    background: #F4F4F4;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  /* Urgent badge */
+  .badge-urgent {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 7px;
+    border-radius: var(--r-xs);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    background: #FEE2E2;
+    color: #B91C1C;
+  }
+
+  /* Editable fields */
+  .editable-field {
+    border-bottom: 1.5px dashed transparent;
+    transition: border-color var(--transition), background var(--transition);
+    border-radius: 3px;
+    cursor: default;
+  }
+  .edit-mode .editable-field {
+    border-bottom-color: var(--tokyo-hex);
+    cursor: text;
+    background: rgba(30, 58, 110, 0.04);
+    padding: 1px 4px;
+    outline: none;
+  }
+  .edit-mode .editable-field:focus {
+    border-bottom-color: var(--osaka-hex);
+    background: rgba(185, 26, 48, 0.04);
+  }
+
+  /* City left accent bar */
+  .city-bar-osaka { border-left: 3px solid var(--osaka-hex); padding-left: 12px; }
+  .city-bar-kyoto  { border-left: 3px solid var(--kyoto-hex);  padding-left: 12px; }
+  .city-bar-tokyo  { border-left: 3px solid var(--tokyo-hex);  padding-left: 12px; }
 }
 
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-@keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
-@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fadeUp 240ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
