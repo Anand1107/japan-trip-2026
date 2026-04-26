@@ -1,6 +1,7 @@
 'use client';
 
 import { useEdit } from './EditContext';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 type Tab = { id: string; label: string; icon: string };
 
@@ -19,6 +20,7 @@ type Props = { activeTab: string; onTabChange: (tab: string) => void };
 
 export default function NavBar({ activeTab, onTabChange }: Props) {
   const { isEditing, toggleEdit, saveStatus } = useEdit();
+  const { user } = useUser();
 
   return (
     <>
@@ -62,6 +64,46 @@ export default function NavBar({ activeTab, onTabChange }: Props) {
             >
               {isEditing ? '💾 Done' : '✏️ Edit'}
             </button>
+            {user ? (
+              <div className="flex items-center gap-1.5">
+                {user.picture ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={user.picture}
+                    alt={user.name ?? 'User'}
+                    className="w-7 h-7 rounded-full"
+                    style={{ boxShadow: 'var(--shadow-sm)' }}
+                  />
+                ) : (
+                  <span className="text-base">👤</span>
+                )}
+                <a
+                  href="/api/auth/logout"
+                  className="text-xs px-2 py-1 font-medium transition-all"
+                  style={{
+                    borderRadius: 'var(--r-sm)',
+                    background: '#F4F4F4',
+                    color: 'var(--text-muted)',
+                    textDecoration: 'none',
+                  }}
+                >
+                  Sign out
+                </a>
+              </div>
+            ) : (
+              <a
+                href="/api/auth/login"
+                className="text-xs px-3 py-1.5 font-medium transition-all"
+                style={{
+                  borderRadius: 'var(--r-sm)',
+                  background: 'var(--osaka-hex)',
+                  color: '#fff',
+                  textDecoration: 'none',
+                }}
+              >
+                Sign in
+              </a>
+            )}
           </div>
         </div>
       </div>
