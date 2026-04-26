@@ -3,7 +3,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'Japan 2026 — Family Trip Companion',
-  description: 'Travel planner for Anand, Saranya & Aila trip to Japan (September 11-23, 2026)',
+  description: 'Travel planner for Anand, Saranya & Aila — Melbourne to Japan, September 11-23, 2026',
 };
 
 export default function RootLayout({

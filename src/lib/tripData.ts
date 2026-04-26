@@ -313,7 +313,7 @@ export const foodGuide: FoodItem[] = [
 ];
 
 export const budgetItems: BudgetItem[] = [
-  { category: 'Flights (return, family)', allocated: 7000, currency: 'AUD', notes: 'Sydney ↔ Tokyo / Osaka (check Qantas, Japan Airlines, ANA)' },
+  { category: 'Flights (return, family)', allocated: 7000, currency: 'AUD', notes: 'Melbourne ↔ Tokyo / Osaka (check Qantas, Japan Airlines, ANA)' },
   { category: 'MIMARU Hotels (12 nights)', allocated: 5000, currency: 'AUD', notes: '3 × MIMARU apartments. ~AUD$400/night family apartment' },
   { category: 'JR Passes (2× adult)', allocated: 1200, currency: 'AUD', notes: '14-day JR Pass per adult. Child under 6 free. Buy before leaving AU.' },
   { category: 'Food & Dining', allocated: 3500, currency: 'AUD', notes: '~AUD$280/day family. Mix street food, sit-down, convenience stores.' },
@@ -332,7 +332,7 @@ export const bookingChecklist: ChecklistItem[] = [
   { id: 'b4', text: 'MIMARU Tokyo Shinjuku West (Sep 11–15)', urgent: true, deadline: 'ASAP', completed: false },
   { id: 'b5', text: 'MIMARU Kyoto Station (Sep 15–19)', urgent: true, deadline: 'ASAP', completed: false },
   { id: 'b6', text: 'MIMARU Osaka Namba (Sep 19–23)', urgent: true, deadline: 'ASAP', completed: false },
-  { id: 'b7', text: 'Flights: Sydney → Tokyo (Haneda), Osaka (KIX) → Sydney', urgent: true, deadline: 'ASAP', completed: false },
+  { id: 'b7', text: 'Flights: Melbourne → Tokyo (Haneda), Osaka (KIX) → Melbourne', urgent: true, deadline: 'ASAP', completed: false },
   { id: 'b8', text: 'Travel insurance (family comprehensive)', urgent: true, deadline: 'Before booking flights', completed: false },
   { id: 'b9', text: 'Shinkansen seat reservations (free with JR Pass)', urgent: false, deadline: '1 month before', completed: false },
   { id: 'b10', text: 'Kyoto kaiseki dinner reservation', urgent: true, deadline: '2 months before', completed: false },

@@ -113,7 +113,7 @@ function OverviewSection() {
       <div className="card">
         <h2 className="font-serif text-lg font-semibold mb-3 text-stone-700">Route</h2>
         <div className="flex items-center gap-2 text-sm">
-          <span className="pill tokyo">Sydney</span>
+          <span className="pill tokyo">Melbourne</span>
           <span className="text-stone-300">→</span>
           <span className="pill tokyo">Tokyo</span>
           <span className="text-stone-300">→</span>
@@ -121,7 +121,7 @@ function OverviewSection() {
           <span className="text-stone-300">→</span>
           <span className="pill osaka">Osaka</span>
           <span className="text-stone-300">→</span>
-          <span className="pill tokyo">Sydney</span>
+          <span className="pill tokyo">Melbourne</span>
         </div>
       </div>
     </div>
