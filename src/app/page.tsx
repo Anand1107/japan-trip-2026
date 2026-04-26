@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { useUser } from '@auth0/nextjs-auth0/client';
+import { useSession, signIn } from 'next-auth/react';
 import { EditProvider } from '../components/EditContext';
 import EditableText from '../components/EditableText';
 import NavBar from '../components/NavBar';
@@ -709,7 +709,9 @@ function ChecklistSection() {
 // ─── Root page ─────────────────────────────────────────────────────────────────
 export default function JapanTripApp() {
   const [activeTab, setActiveTab] = useState('overview');
-  const { user, isLoading } = useUser();
+  const { data: session, status } = useSession();
+  const user = session?.user;
+  const isLoading = status === 'loading';
 
   useEffect(() => {
     const saved = sessionStorage.getItem('activeTab');
@@ -737,8 +739,8 @@ export default function JapanTripApp() {
           <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🌸</div>
           <h1 className="font-serif" style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--text)', marginBottom: '0.5rem' }}>Japan 2026</h1>
           <p style={{ fontSize: '0.875rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>Sign in to access the family trip planner</p>
-          <a
-            href="/api/auth/login"
+          <button
+            onClick={() => signIn('auth0')}
             style={{
               display: 'block',
               width: '100%',
@@ -748,11 +750,12 @@ export default function JapanTripApp() {
               borderRadius: 'var(--r-sm)',
               fontWeight: 600,
               fontSize: '0.875rem',
-              textDecoration: 'none',
+              border: 'none',
+              cursor: 'pointer',
             }}
           >
             Sign in with Auth0
-          </a>
+          </button>
         </div>
       </div>
     );

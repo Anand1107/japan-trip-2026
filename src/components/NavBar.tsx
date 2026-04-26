@@ -1,7 +1,7 @@
 'use client';
 
 import { useEdit } from './EditContext';
-import { useUser } from '@auth0/nextjs-auth0/client';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 type Tab = { id: string; label: string; icon: string };
 
@@ -20,7 +20,8 @@ type Props = { activeTab: string; onTabChange: (tab: string) => void };
 
 export default function NavBar({ activeTab, onTabChange }: Props) {
   const { isEditing, toggleEdit, saveStatus } = useEdit();
-  const { user } = useUser();
+  const { data: session } = useSession();
+  const user = session?.user;
 
   return (
     <>
@@ -66,10 +67,10 @@ export default function NavBar({ activeTab, onTabChange }: Props) {
             </button>
             {user ? (
               <div className="flex items-center gap-1.5">
-                {user.picture ? (
+                {user.image ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
-                    src={user.picture}
+                    src={user.image}
                     alt={user.name ?? 'User'}
                     className="w-7 h-7 rounded-full"
                     style={{ boxShadow: 'var(--shadow-sm)' }}
@@ -77,32 +78,34 @@ export default function NavBar({ activeTab, onTabChange }: Props) {
                 ) : (
                   <span className="text-base">👤</span>
                 )}
-                <a
-                  href="/api/auth/logout"
+                <button
+                  onClick={() => signOut()}
                   className="text-xs px-2 py-1 font-medium transition-all"
                   style={{
                     borderRadius: 'var(--r-sm)',
                     background: '#F4F4F4',
                     color: 'var(--text-muted)',
-                    textDecoration: 'none',
+                    border: 'none',
+                    cursor: 'pointer',
                   }}
                 >
                   Sign out
-                </a>
+                </button>
               </div>
             ) : (
-              <a
-                href="/api/auth/login"
+              <button
+                onClick={() => signIn('auth0')}
                 className="text-xs px-3 py-1.5 font-medium transition-all"
                 style={{
                   borderRadius: 'var(--r-sm)',
                   background: 'var(--osaka-hex)',
                   color: '#fff',
-                  textDecoration: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
                 }}
               >
                 Sign in
-              </a>
+              </button>
             )}
           </div>
         </div>
